@@ -89,7 +89,7 @@ const getIconForFileType = (name: string) => {
 
 const deleteOldFiles = async () => {
     // delete 10 days old files
-    const pb = new PocketBase('https://evilxd.pockethost.io/');
+    const pb = new PocketBase('https://evilxd.pockethost.io');
     // Get the current date and subtract 10 days
     const tenDaysAgo = new Date();
     tenDaysAgo.setDate(tenDaysAgo.getDate() - 1);
@@ -110,7 +110,7 @@ const deleteOldFiles = async () => {
 export function Upload() {
     const [loading, setLoading] = useState(false);
     const [uniqueCode, setUniqueCode] = useState<string>();
-    const pb = new PocketBase('https://evilxd.pockethost.io/');
+    const pb = new PocketBase('https://evilxd.pockethost.io');
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     const [isDragging, setIsDragging] = useState(false);
     const [isUploaded, setIsUploaded] = useState(false);
@@ -497,7 +497,7 @@ export function Upload() {
                                     </span>
                                 </div>
                                 <QRCode
-                                    url={`https://fs.sujal.xyz/${uniqueCode}`}
+                                    url={`https://file-share-server-ten.vercel.app/${uniqueCode}`}
                                 />
                             </div>
                         </CardContent>

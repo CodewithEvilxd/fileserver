@@ -14,7 +14,7 @@ function ShowCode({ unique }: { unique: string }) {
                     <div className="text-xl text-gray-700 dark:text-gray-200 font-mono">
                         Sharing Code <span className='text-primary'>{unique}</span>
                     </div>
-                    <QRCode url={`https://fs.sujal.xyz/${unique}`} />
+                    <QRCode url={`https://file-share-server-ten.vercel.app/${unique}`} />
                 </div>
             </CardContent>
 

@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
     let newUnique;
     try {
         const formData = await req.formData();
-        const pb = new PocketBase('https://evilxd.pockethost.io/');
+        const pb = new PocketBase('https://evilxd.pockethost.io');
 
         do {
             newUnique = generateUniqueCode();
@@ -27,12 +27,12 @@ export async function POST(req: NextRequest) {
     } catch (error: any) {
         console.error('Error handling shared content:', error?.message);
         newUnique = "";
-        return redirect('https://fs.sujal.xyz/');
+        return redirect('https://file-share-server-ten.vercel.app/');
     } finally {
         if (newUnique === "") {
-            return redirect('https://fs.sujal.xyz/');
+            return redirect('https://file-share-server-ten.vercel.app/');
         } else {
-            return redirect('https://fs.sujal.xyz/show-' + newUnique);
+            return redirect('https://file-share-server-ten.vercel.app/show-' + newUnique);
         }
     }
 }

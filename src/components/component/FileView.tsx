@@ -35,7 +35,7 @@ interface FileViewProps {
 }
 
 export function FileView({ code = '' }: FileViewProps) {
-    const pb = new PocketBase('https://evilxd.pockethost.io/');
+    const pb = new PocketBase('https://evilxd.pockethost.io');
     const [fetchedCode, setFetchedCode] = useState<string>('');
     const [fileLinks, setFileLinks] = useState<string[]>([]);
     const [magicWord, setMagicWord] = useState<string>(
@@ -101,7 +101,7 @@ export function FileView({ code = '' }: FileViewProps) {
                 file.startsWith('user_input')
             );
             if (userInputFile) {
-                const fileUrl = `https://sujal.pockethost.io/api/files/files/${res.id}/${userInputFile}`;
+                const fileUrl = `https://evilxd.pockethost.io/api/files/files/${res.id}/${userInputFile}`;
                 const response = await fetch(fileUrl);
                 const text = await response.text();
                 setTextFileContent(text);
@@ -283,7 +283,7 @@ export function FileView({ code = '' }: FileViewProps) {
                                         <div className="flex items-center flex-grow">
                                             {getIconForFileType(fileName)}
                                             <a
-                                                href={`https://sujal.pockethost.io/api/files/files/${collectionID}/${link}`}
+                                                href={`https://evilxd.pockethost.io/api/files/files/${collectionID}/${link}`}
                                                 className="text-lg underline underline-offset-1 font-semibold truncate max-w-[200px]"
                                                 title={fileName}
                                             >
@@ -291,7 +291,7 @@ export function FileView({ code = '' }: FileViewProps) {
                                             </a>
                                         </div>
                                         <a
-                                            href={`https://sujal.pockethost.io/api/files/files/${collectionID}/${link}`}
+                                            href={`https://evilxd.pockethost.io/api/files/files/${collectionID}/${link}`}
                                             download
                                             target="_blank"
                                             rel="noopener noreferrer"
